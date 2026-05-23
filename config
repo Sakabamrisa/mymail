@@ -1,0 +1,59 @@
+Host 47.95.156.180
+  HostName 47.95.156.180
+  User root
+  Port 23456
+  RemoteForward 17897 127.0.0.1:7897
+
+Host connect.cqa1.seetacloud.com
+  HostName connect.cqa1.seetacloud.com
+  Port 21637
+  User root
+  RemoteForward 17897 127.0.0.1:7897
+
+Host connect.cqa1.seetacloud.com
+  HostName connect.cqa1.seetacloud.com
+  Port 16291
+  User root
+  RemoteForward 17897 127.0.0.1:7897
+
+Host seeta1
+  HostName connect.cqa1.seetacloud.com
+  Port 21637
+  User root
+  RemoteForward 17897 127.0.0.1:7897
+
+Host seeta2
+  HostName connect.cqa1.seetacloud.com
+  Port 33139
+  User root
+  RemoteForward 17897 127.0.0.1:7897
+
+# 跳板机
+Host jump
+  HostName 211.137.127.176
+  User QinyunChangan6418
+  Port 22
+
+Host gpu_100_4
+  HostName 10.10.1.20
+  User ubuntu
+  ProxyJump jump
+  RemoteForward 17897 127.0.0.1:7897
+
+Host gpu_100_1
+  HostName 10.10.1.16
+  User ubuntu
+  ProxyJump jump
+  RemoteForward 17897 127.0.0.1:7897
+
+Host gpu_100_2
+  HostName 10.10.1.18
+  User ubuntu
+  ProxyJump jump
+  RemoteForward 17897 127.0.0.1:7897
+
+Host gpu_100_3
+  HostName 10.10.1.19
+  User ubuntu
+  ProxyJump jump
+  RemoteForward 17897 127.0.0.1:7897
